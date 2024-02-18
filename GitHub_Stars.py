@@ -6,18 +6,18 @@ import csv
 import os.path
 from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
+import os
+
 
 # Your GitHub personal access token
-github_token = st.secrets["github"]["github_api_key"]
-
+#github_token = st.secrets["github"]["github_api_key"]
+github_token = os.getenv('github_api_key')
 st.write("## GitHub Stars")
 
 # Directory to save the CSV files
 csv_dir = 'pages/github_stars'
 
 
-# Your GitHub personal access token
-github_token = st.secrets["github"]["github_api_key"]
 
 # GraphQL query to fetch stargazers with their starredAt date
 query = """
